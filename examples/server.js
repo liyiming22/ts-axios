@@ -10,10 +10,15 @@ const compiler = webpack(WebpackConfig)
 
 const router = express.Router()
 
+// test router goes here
 router.get('/simple/get', (req, res) => {
   res.json({
     msg: 'hello, world'
   })
+})
+
+router.get('/base/get', (req, res) => {
+  res.json(req.query)
 })
 
 app.use(router)
